@@ -26,9 +26,9 @@
                                    OnRegister="LoginPanel_Register" />
                     <br />
                     <div class="nav-links">
-                        <a class="btn" href="Pages/Default.aspx">Back to Home</a>
-                        <a class="btn" href="Pages/Member.aspx">Member page</a>
-                        <a class="btn" href="Pages/Staff.aspx">Staff page</a>
+                        <a class="btn" href="~/Pages/Default.aspx">Back to Home</a>
+                        <a class="btn" href="~/Pages/Member.aspx">Member page</a>
+                        <a class="btn" href="~/Pages/Staff.aspx">Staff page</a>
                     </div>
                 </div>
             </div>

@@ -4,24 +4,24 @@
     <Username>TA</Username>
     <!-- Cse445! -->
     <PasswordHash>d85b22f0890f5e82d76967037156f2a0bf779bcd44123bd5a2fa7ab299a289d6</PasswordHash>
-	  <PrefZip>85281</PrefZip>
+    <PrefZip>85281</PrefZip>
   </User>
   <User>
     <Username>Kyle</Username>
     <!-- Password1! -->
     <PasswordHash>1d707811988069ca760826861d6d63a10e8c3b7f171c4441a6472ea58c11711b</PasswordHash>
-	  <PrefZip>85383</PrefZip>
+    <PrefZip>85383</PrefZip>
   </User>
   <User>
     <Username>Staff</Username>
     <!-- Password1! -->
     <PasswordHash>1d707811988069ca760826861d6d63a10e8c3b7f171c4441a6472ea58c11711b</PasswordHash>
-	  <PrefZip>85281</PrefZip>
+    <PrefZip>85281</PrefZip>
   </User>
   <User>
     <Username>Member</Username>
     <!-- Password1! -->
     <PasswordHash>1d707811988069ca760826861d6d63a10e8c3b7f171c4441a6472ea58c11711b</PasswordHash>
-	  <PrefZip>85281</PrefZip>
-  </User>
+    <PrefZip>85281</PrefZip>
+  </User>	
 </Users>

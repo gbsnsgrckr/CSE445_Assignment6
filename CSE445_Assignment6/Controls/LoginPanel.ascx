@@ -16,7 +16,7 @@
     <div id="captchaPanel" runat="server" class="captcha-wrap">
         <br />
         <!-- Captcha image -->
-        <img id="imgCaptcha" src="<%= ResolveUrl("~/Captcha.ashx") %>" alt="CAPTCHA" />
+        <img id="imgCaptcha" src="<%= ResolveUrl("~/Captcha.ashx") %>" alt="CAPTCHA" />F
         <!-- Captcha text input box -->
         <asp:TextBox ID="txtCaptcha" runat="server" Width="90" placeholder="Enter Captcha" />
         <a href="javascript:void(0)" class="captcha-refresh" onclick="document.getElementById('imgCaptcha').src='<%= ResolveUrl("~/Captcha.ashx") %>?r=' + new Date().getTime();">↻</a>

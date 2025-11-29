@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Members>
-	<User>TA</User>
-	<User>Staff</User>
-	<User>Member</User>
-	<User>Kyle</User>
+  <User>TA</User>
+  <User>Staff</User>
+  <User>Member</User>
+  <User>Kyle</User>
+  <User>Test</User>
+  <User>Test1</User>
+  <User>Test2</User>
+  <User>Test3</User>
+  <User>Test4</User>
+  <User>Test5</User>
 </Members>

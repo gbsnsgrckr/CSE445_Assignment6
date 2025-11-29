@@ -32,7 +32,7 @@ namespace CSE445_Assignment6
 
             if (!string.Equals(password, confirm, StringComparison.Ordinal))
             {
-                litMsg.Text = "<span style='color:#b00;'>Error: Password and Confirm Password do not match.</span>";
+                litMsg.Text = "<span style='color:#b00;'>Error: Password and Confirmation do not match.</span>";
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace CSE445_Assignment6
             // debug - success message
             litMsg.Text =
                 "<span style='color:green;'>Registration successful. " +
-                "You may now <a href='Login.aspx'>log in</a> with your new account.</span>";
+                "You may now log in with your new account.</span>";
 
             // clear fields
             txtPass.Text = string.Empty;
