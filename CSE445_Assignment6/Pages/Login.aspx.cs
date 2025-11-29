@@ -1,0 +1,69 @@
+﻿using CSE445_Assignment6.Controls;
+using CSE445_Assignment6;
+using System;
+using System.Security.Principal;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace CSE445_Assignment6
+{
+    public partial class Login : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+
+        // Raised by LoginPanel when captcha + basic input pass
+        protected void LoginPanel_Login(object sender, LoginEventArgs e)
+        {
+            string username = (e.Username ?? "").Trim();
+            string password = e.Password ?? "";
+
+            // check staff role
+            if (Account.TryValidateStaff(username, password))
+            {
+                IssueAuthCookie(username, e.RememberMe, isStaff: true);
+
+                return;
+            }
+
+            // check normal member
+            if (Account.TryValidateMember(username, password))
+            {
+                IssueAuthCookie(username, e.RememberMe, isStaff: false);
+
+                return;
+            }
+
+            // wrong credentials
+            var litMsg = LoginPanel1.FindControl("litMsg") as Literal;
+
+            if (litMsg != null)
+            {
+                litMsg.Text = "<span style='color:#b00;'>Error: Invalid username or password.</span>";
+            }
+        }
+
+        // to registration page
+        protected void LoginPanel_Register(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Register.aspx");
+        }
+
+        private void IssueAuthCookie(string username, bool rememberMe, bool isStaff)
+        {
+            if (rememberMe && !string.IsNullOrWhiteSpace(username))
+            {
+                Response.Cookies["LastUser"].Value = username;
+                Response.Cookies["LastUser"].Expires = DateTime.UtcNow.AddDays(7);
+            }
+
+            // Mark staff flag in session for convenience
+            Session["IsStaff"] = isStaff;
+
+            FormsAuthentication.RedirectFromLoginPage(username, rememberMe);
+        }
+    }
+}

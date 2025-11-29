@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CSE445_Assignment6.WindService.WindService" CodeBehind="WindService.svc.cs" %>

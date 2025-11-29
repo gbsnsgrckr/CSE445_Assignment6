@@ -1,0 +1,292 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #121212;
+    color: #E4E4E4;
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    font-size: 26px;
+}
+
+.sub {
+    opacity: 0.85;
+    margin-bottom: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 18px;
+}
+
+.grid-rows {
+    display: grid;
+    gap: 18px;
+    grid-gap: 18px;
+    grid-row-gap: 18px;
+}
+
+.grid-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.card {
+    background-color: #121212;
+    border: 1px solid #2A2A2A;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: none;
+}
+
+    .card.elevated {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+.login {
+    max-width: 400px;
+}
+
+    .login.register {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+.page-center {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.remember-wrap {
+    margin-bottom: 5px;
+}
+
+table.dir {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+    table.dir th, table.dir td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
+    }
+
+    table.dir th {
+        text-align: center;
+    }
+
+    table.dir td {
+        text-align: left;
+    }
+
+.table.dir td.row-actions {
+    text-align: center;
+}
+
+.small {
+    font-size: 12px;
+    color: #A0A0A0;
+    line-height: 20px;
+}
+
+.muted {
+    color: #666;
+}
+
+.nav-links a,
+a.btn,
+.btn {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #3A3A3A;
+    background: #1E1E1E;
+    color: #3B82F6;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .nav-links a:hover,
+    .btn:hover {
+        background: #2563EB;
+        border-color: #2563EB;
+        color: #ffffff;
+    }
+
+a {
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #60A5FA;
+        text-decoration: underline;
+    }
+
+.row-actions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+    .row-actions .btn {
+        display: block;
+        margin: 8px auto 4px;
+        max-width: 120px;
+    }
+
+input[type=text],
+input[type=password],
+textarea,
+select,
+asp\:textbox {
+    background-color: #2A2A2A;
+    border: 1px solid #3F3F3F;
+    color: #E5E5E5;
+    padding: 6px 8px;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    input[type=text]:focus,
+    input[type=password]:focus,
+    textarea:focus,
+    select:focus {
+        outline: none;
+        border-color: #2563EB;
+    }
+
+.kv {
+    font-size: 14px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+    .kv dt {
+        float: left;
+        clear: left;
+        width: 120px;
+        font-weight: 500;
+        margin: 0 0 4px 0;
+    }
+
+    .kv dd {
+        margin: 0 0 20px 200px;
+    }
+
+#imgCaptcha {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+#txtCaptcha {
+    margin-top: 2px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* weather forecast display styles */
+
+.wx-wrap {
+    max-width: 980px;
+    margin: 12px auto;
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.wx-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+    .wx-table th,
+    .wx-table td {
+        text-align: center;
+        padding: 10px 6px;
+        color: #E4E4E4;
+        background-color: transparent;
+        font-family: inherit;
+        border-right: 1px solid #ccc;
+    }
+
+        .wx-table th:last-child,
+        .wx-table td:last-child {
+            border-right: none;
+        }
+
+    .wx-table thead th {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+.wx-emoji {
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.wx-high {
+    font-weight: 700;
+}
+
+.wx-low {
+    opacity: 0.85;
+}
+
+.wx-label {
+    display: block;
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+/* News list */
+.news-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+    .news-list li {
+        margin-bottom: 14px;
+        line-height: 1.4;
+    }
+
+    .news-list img {
+        display: block;
+        max-width: 220px;
+        height: auto;
+        border-radius: 6px;
+        margin-bottom: 4px;
+    }
+
+    .news-list a {
+        color: #4ea3ff;
+        text-decoration: none;
+    }
+
+        .news-list a:hover {
+            text-decoration: underline;
+        }
+
+
