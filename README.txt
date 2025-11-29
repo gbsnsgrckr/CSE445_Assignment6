@@ -6,6 +6,9 @@ Elani Zarraga
 
 To test:
 
-Start from the solution within the CSE445_Assignment6 folder/project.
+Start from the solution within the root. This will open Visual Studio. Select Debug -> Start without debugging and the application will begin running in your browser.
 
-The CSE445_Assignment6.SercurityLib is another project used in the main project(CSE445_Assignment6) but implemented separately for practice. You do not need to do anything extra with this .SecurityLib folder to make it functional as long as it is in the same directory as the main folder(CSE445_Assignment6).
+From there you will be given details as to how to view the application on Webstrar as well.
+
+Thank you!
+
