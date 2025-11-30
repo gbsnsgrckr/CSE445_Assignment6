@@ -215,9 +215,7 @@ namespace CSE445_Assignment6
 
             var doc = LoadOrCreateStaffDoc();
 
-            return doc.Root
-                      .Elements("User")
-                      .Any(u => (string)u == username);
+            return doc.Root.Elements("User").Any(u => (string)u == username);
         }
 
         // xml helpers
@@ -228,6 +226,7 @@ namespace CSE445_Assignment6
             {
                 var doc = new XDocument(new XElement("Users"));
                 doc.Save(UsersXmlPath);
+
                 return doc;
             }
 
@@ -245,6 +244,7 @@ namespace CSE445_Assignment6
             {
                 var doc = new XDocument(new XElement("Members"));
                 doc.Save(MemberXmlPath);
+
                 return doc;
             }
 
@@ -262,6 +262,7 @@ namespace CSE445_Assignment6
             {
                 var doc = new XDocument(new XElement("Staff"));
                 doc.Save(StaffXmlPath);
+
                 return doc;
             }
 

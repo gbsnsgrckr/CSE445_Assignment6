@@ -84,7 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Account.cs" />
-    <Compile Include="INewService.cs" />
+    <Compile Include="INewsService.cs" />
     <Compile Include="Controls\LoginEventArgs.cs" />
     <Compile Include="Controls\LoginPanel.ascx.cs">
       <DependentUpon>LoginPanel.ascx</DependentUpon>

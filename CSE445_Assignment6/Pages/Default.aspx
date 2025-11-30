@@ -183,7 +183,7 @@
                                     Return: (cookie stored on client side)
                                 </td>
                                 <td class="row-actions">
-                                    <a class="btn" href="Member.aspx#cookie">TryIt</a>
+                                    <a class="btn" href="TryIt.aspx#cookie">TryIt</a>
                                     <br />
                                     <br />
                                 </td>
@@ -199,7 +199,7 @@
                                     Return: <code>int</code>
                                 </td>
                                 <td class="row-actions">
-                                    <a class="btn" href="Member.aspx#global">TryIt</a>
+                                    <a class="btn" href="TryIt.aspx#global">TryIt</a>
                                     <br />
                                 </td>
                             </tr>
