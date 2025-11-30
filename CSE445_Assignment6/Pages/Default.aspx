@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="wrap">
-            <h1>CSE445 - Assignment 6 - News/Weather/Email Application</h1>
+            <h1>CSE445 - Assignment 6 - News/Weather/Stocks Application</h1>
             <h2>Team members names and contribution:</h2>
             <span>Kyle Pierce - 33.33%</span><br />
             <span>Diya Jim - 33.33%</span><br />
