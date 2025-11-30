@@ -22,7 +22,6 @@ namespace CSE445_Assignment6
                 string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 string appPath = Request.ApplicationPath;
 
-                // try
                 if (!appPath.EndsWith("/"))
                 {
                     appPath += "/";
@@ -57,11 +56,21 @@ namespace CSE445_Assignment6
         // Login event handler
         protected void Login(object sender, Controls.LoginEventArgs e)
         {
-            // Remember-me cookie
+            // try clear old cookies first
+            Response.Cookies["LastUser"].Expires = DateTime.UtcNow.AddDays(-1);
+            Response.Cookies["RememberUser"].Expires = DateTime.UtcNow.AddDays(-1);
+
             if (e.RememberMe && !string.IsNullOrWhiteSpace(e.Username))
             {
-                Response.Cookies["LastUser"].Value = e.Username.Trim();
+                string uname = e.Username.Trim();
+
+                // remembered username
+                Response.Cookies["LastUser"].Value = uname;
                 Response.Cookies["LastUser"].Expires = DateTime.UtcNow.AddDays(7);
+
+                // remember flag
+                Response.Cookies["RememberUser"].Value = "1";
+                Response.Cookies["RememberUser"].Expires = DateTime.UtcNow.AddDays(7);
             }
 
             string username = (e.Username ?? string.Empty).Trim();

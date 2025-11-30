@@ -13,9 +13,12 @@ namespace CSE445_Assignment6.Controls
         public event EventHandler<LoginEventArgs> Login;
         public event EventHandler Register;
 
-        // cookie
+        // cookie for captcha-skipping
         private const string LoginCookie = "LoginOK";
         private const int LoginDays = 7;
+
+        // cookie for remember-me flag
+        private const string RememberMeCookie = "RememberUser";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,9 +27,22 @@ namespace CSE445_Assignment6.Controls
                 // If cookie exists, hide captcha panel.
                 var c = Request.Cookies[LoginCookie];
 
-                // If you want CAPTCHA every time, just set captchaPanel.Visible = true.
+                // If want CAPTCHA every time, just set captchaPanel.Visible = true.
                 captchaPanel.Visible = true;
                 // captchaPanel.Visible = (c == null);
+
+                // remember me functionality
+                var rememberCookie = Request.Cookies[RememberMeCookie];
+                var lastUserCookie = Request.Cookies["LastUser"];
+
+                if (rememberCookie != null &&
+                    rememberCookie.Value == "1" &&
+                    lastUserCookie != null &&
+                    !string.IsNullOrWhiteSpace(lastUserCookie.Value))
+                {
+                    txtUser.Text = lastUserCookie.Value;
+                    chkRememberMe.Checked = true;
+                }
             }
         }
 
@@ -53,14 +69,15 @@ namespace CSE445_Assignment6.Controls
             // clear old message
             litMsg.Text = string.Empty;
 
-            // set cookie
+            // set captcha-skip cookie
             var cookie = new HttpCookie(LoginCookie, "1")
             {
                 Expires = DateTime.UtcNow.AddDays(LoginDays)
             };
             Response.Cookies.Add(cookie);
 
-            // login event
+            // raise login event, page code-behind will decide
+            // what to do with LastUser / RememberUser cookies
             Login?.Invoke(this, new LoginEventArgs(
                 txtUser.Text.Trim(),
                 txtPass.Text,

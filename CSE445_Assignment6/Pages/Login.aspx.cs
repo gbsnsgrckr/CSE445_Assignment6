@@ -15,7 +15,7 @@ namespace CSE445_Assignment6
         {
         }
 
-        // Raised by LoginPanel when captcha + basic input pass
+        // called by LoginPanel when captcha and input validation pass
         protected void LoginPanel_Login(object sender, LoginEventArgs e)
         {
             string username = (e.Username ?? "").Trim();
@@ -25,7 +25,6 @@ namespace CSE445_Assignment6
             if (Account.TryValidateStaff(username, password))
             {
                 IssueAuthCookie(username, e.RememberMe, isStaff: true);
-
                 return;
             }
 
@@ -33,7 +32,6 @@ namespace CSE445_Assignment6
             if (Account.TryValidateMember(username, password))
             {
                 IssueAuthCookie(username, e.RememberMe, isStaff: false);
-
                 return;
             }
 
@@ -54,13 +52,24 @@ namespace CSE445_Assignment6
 
         private void IssueAuthCookie(string username, bool rememberMe, bool isStaff)
         {
+            // try clear old remember cookies
+            Response.Cookies["LastUser"].Expires = DateTime.UtcNow.AddDays(-1);
+            Response.Cookies["RememberUser"].Expires = DateTime.UtcNow.AddDays(-1);
+
             if (rememberMe && !string.IsNullOrWhiteSpace(username))
             {
-                Response.Cookies["LastUser"].Value = username;
+                string uname = username.Trim();
+
+                // store username
+                Response.Cookies["LastUser"].Value = uname;
                 Response.Cookies["LastUser"].Expires = DateTime.UtcNow.AddDays(7);
+
+                // remember flag
+                Response.Cookies["RememberUser"].Value = "1";
+                Response.Cookies["RememberUser"].Expires = DateTime.UtcNow.AddDays(7);
             }
 
-            // Mark staff flag in session for convenience
+            // mark staff flag in session
             Session["IsStaff"] = isStaff;
 
             FormsAuthentication.RedirectFromLoginPage(username, rememberMe);
