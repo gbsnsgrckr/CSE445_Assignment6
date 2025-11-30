@@ -70,9 +70,6 @@
                             <asp:Label runat="server" ID="lblStockUrl" /></span><br />
                     </p>
                     <p>
-                        Testing my service
-                    </p>
-                    <p>
                         Input a stock symbol (AAPL,MSFT,etc.) and we will output some advice about it:
                     </p>
                     <p>
@@ -94,8 +91,9 @@
                 <div class="card">
                     <h2>Cookie Testing</h2>
                     <p>
-                        Component: Cookie Testing - This is what happens when user typically hits the 'Give Advice' Button
+                        This allows you to manually set a cookie. Leave the page and return to see that your input is saved.
                     <br />
+                        <br />
                         Enter symbol to be saved as a cookie:
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         <br />
