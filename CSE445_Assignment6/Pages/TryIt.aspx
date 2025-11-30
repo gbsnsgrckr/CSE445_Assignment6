@@ -169,7 +169,7 @@
                     <span>• To test the <b>Cookies</b>, simply navigate to the TryIt page via the TryIt button, enter an input into any box, invoke that service, and then leave the page(Close or use the back button). When you return to the same page, your inputs will be prefilled.</span>
                     <br />
                     <br />
-                    <span>• To test the <b>User Control (LoginPanel)</b>, login via the login section on the Default.aspx page or by pressing the "Log In" button which will direct you to the Login.aspx page. The user control is implemented via the LoginPanel.ascx files in the Project within the Controls folder (CSE445_Assignment5/Controls/) where it may be inspected.</span>
+                    <span>• To test the <b>User Control (LoginPanel)</b>, login via the login section on the Default.aspx page or by pressing the "Log In" button which will direct you to the Login.aspx page. The user control is implemented via the LoginPanel.ascx files in the Project within the Controls folder (CSE445_Assignment6/Controls/) where it may be inspected.</span>
                     <br />
                     <br />
                     <span>• To test the <b>Global.asax</b>, navigate to the TryIt page via the TrIt button, or navigate to the Member page via the Member button. From there, you can interact with the User/Visitor counter that utilizes the Global.asax component.</span>

@@ -89,9 +89,35 @@
                                 <asp:Literal ID="litResetMsg" runat="server" />
                             </div>
                         </div>
+
+
+                        <!-- Bottom Card - Testing Tips and Webstrar Info -->
+                        <div style="margin-top: 0;" class="card">
+                            <h1>***THIS APPLICATION IS DEPLOYED ON WEBSTRAR AS WELL***</h1>
+                            <br />
+                            <p style="padding-left: 2em;">
+                                <span>• If you would like to test through <b>Webstrar</b>, visit: http://webstrar73.fulton.asu.edu/page0 while connected to Cisco AnyConnect using sslvpn.asu.edu/2fa as instructed in the Webstrar tutorial for this assignment.</span>
+                            </p>
+                            <h3>Testing Tips:</h3>
+                            <p style="padding-left: 2em;">
+                                <span>• To test the <b>WSDL services</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into the respective service's input box and Invoke.</span>
+                                <br />
+                                <br />
+                                <span>• To test the <b>DLL</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into the SecurityLib - hasing (local DLL) section's input box, and select the preferred encryption type via the buttons to invoke.</span>
+                                <br />
+                                <br />
+                                <span>• To test the <b>Cookies</b>, simply navigate to the TryIt page via the TryIt button, enter an input into any box, invoke that service, and then leave the page(Close or use the back button). When you return to the same page, your inputs will be prefilled.</span>
+                                <br />
+                                <br />
+                                <span>• To test the <b>User Control (LoginPanel)</b>, login via the login section on the Default.aspx page or by pressing the "Log In" button which will direct you to the Login.aspx page. The user control is implemented via the LoginPanel.ascx files in the Project within the Controls folder (CSE445_Assignment6/Controls/) where it may be inspected.</span>
+                                <br />
+                                <br />
+                                <span>• To test the <b>Global.asax</b>, navigate to the TryIt page via the TrIt button, or navigate to the Member page via the Member button. From there, you can interact with the User/Visitor counter that utilizes the Global.asax component.</span>
+                            </p>
+                        </div>
                     </div>
+                </div>
             </div>
-        </div>
         </div>
     </form>
 
