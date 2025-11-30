@@ -72,7 +72,36 @@ namespace CSE445_Assignment6
             // mark staff flag in session
             Session["IsStaff"] = isStaff;
 
-            FormsAuthentication.RedirectFromLoginPage(username, rememberMe);
+            // roles string
+            string roles = isStaff ? "Staff" : "Member";
+
+            // build a proper forms ticket with roles
+            var ticket = new FormsAuthenticationTicket(
+                1,
+                username,
+                DateTime.Now,
+                DateTime.Now.AddMinutes(30),
+                rememberMe,
+                roles,
+                FormsAuthentication.FormsCookiePath
+            );
+
+            // encrypt into auth cookie
+            string encrypted = FormsAuthentication.Encrypt(ticket);
+            var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
+
+            if (rememberMe)
+            {
+                authCookie.Expires = ticket.Expiration;
+            }
+
+            Response.Cookies.Add(authCookie);
+
+            // use ReturnUrl if present
+            string redirectUrl = FormsAuthentication.GetRedirectUrl(username, rememberMe);
+            Response.Redirect(redirectUrl);
+
+
         }
     }
 }

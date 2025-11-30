@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Xml.Linq;
 
@@ -10,9 +11,18 @@ namespace CSE445_Assignment6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // check if user is authenticated and in Staff role
             if (!User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/Login.aspx");
+                return;
+            }
+
+            if (!User.IsInRole("Staff"))
+            {
+                // send to member page
+                Response.Redirect("~/Pages/Member.aspx");
+
                 return;
             }
 

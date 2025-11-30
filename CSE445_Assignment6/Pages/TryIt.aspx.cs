@@ -32,17 +32,6 @@ namespace CSE445_Assignment6
                 {
                     txtZip.Text = c.Value;
                 }
-                /* Not used for Assignment 6
-                if (string.IsNullOrWhiteSpace(txtSolarZip.Text))
-                {
-                    txtSolarZip.Text = c.Value;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtWindZip.Text))
-                {
-                    txtWindZip.Text = c.Value;
-                }
-                */
             }
 
             // Prefill SecurityLib/Hashing input from cookie if present
@@ -52,6 +41,17 @@ namespace CSE445_Assignment6
                 if (string.IsNullOrWhiteSpace(txtHashInput.Text))
                 {
                     txtHashInput.Text = cH.Value;
+                }
+            }
+
+            // Prefill StockService input from cookie if present
+            var cS = Request.Cookies["LastStock"];
+            if (cS != null && !string.IsNullOrWhiteSpace(cS.Value))
+            {
+                if (string.IsNullOrWhiteSpace(TextBox2.Text))
+                {
+                    TextBox2.Text = cS.Value;
+                    TextBox1.Text = cS.Value;
                 }
             }
         }
@@ -247,7 +247,7 @@ namespace CSE445_Assignment6
             {
                 Label4.Text = " enter a cookie first";
             }
-            HttpCookie lastStockCookie = new HttpCookie("lastStockSymbol", symbol);
+            HttpCookie lastStockCookie = new HttpCookie("LastStock", symbol);
             lastStockCookie.Expires = DateTime.Now.AddDays(7);
             Response.Cookies.Add(lastStockCookie);
 

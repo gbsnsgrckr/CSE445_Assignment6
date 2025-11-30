@@ -1,17 +1,23 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CSE445_Assignment6.Default" %>
+
 <%@ Register Src="~/Controls/LoginPanel.ascx" TagPrefix="uc" TagName="LoginPanel" %>
 
 <!DOCTYPE html>
 <html>
 <head runat="server">
     <link runat="server" href="~/Content/Dark.css" rel="stylesheet" type="text/css" />
-    <title>CSE445 Assignment 6 — Public page</title>
+    <title>Assignment 6 – Integrated News/Stock/Weather Application</title>
     <meta charset="utf-8" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="wrap">
             <h1>CSE445 - Assignment 6 - News/Weather/Email Application</h1>
+            <h2>Team members names and contribution:</h2>
+            <span>Kyle Pierce - 33.33%</span><br />
+            <span>Diya Jim - 33.33%</span><br />
+            <span>Elani Zarraga - 33.33%</span><br />
+            <br />
 
             <div class="grid">
                 <!-- Top row: Login card and Component info card side by side -->
@@ -45,6 +51,9 @@
 
                             <dt>Cookies:</dt>
                             <dd>"Remember me" functionality for login as well as retaining ZIP input on TryIt page.</dd>
+
+                            <dt>Global.asax:</dt>
+                            <dd>Visitor count and also Forms authorization ticket</dd>
                         </dl>
                     </div>
 
@@ -86,8 +95,7 @@
                             <tr>
                                 <td><%: litProvider1.Text %></td>
                                 <td>SVC (WSDL)</td>
-                                <td class="small">
-                                    Displays a 5-day weather forecast for a given ZIP code.<br />
+                                <td class="small">Displays a 5-day weather forecast for a given ZIP code.<br />
                                     <b>Weather5day</b><br />
                                     Params: <code>zip - string</code><br />
                                     Return: <code>string[]</code>
@@ -99,51 +107,12 @@
                                         <asp:Literal ID="litWxUrl" runat="server" /></span>
                                 </td>
                             </tr>
-                            <%-- Not using for Assignment 6
-                            <!-- Wind service -->
-                            <tr>
-                                <td><%: litProvider1.Text %></td>
-                                <td>SVC (WSDL)</td>
-                                <td class="small">
-                                    Displays average monthly wind intensity for a given ZIP code.<br />
-                                    <b>WindIntensity</b><br />
-                                    Params: <code>lat - decimal, lon - decimal</code><br />
-                                    Return: <code>decimal</code>
-                                </td>
-                                <td class="row-actions">
-                                    <a class="btn" href="TryIt.aspx#wind">TryIt</a>
-                                    <span class="small muted">Endpoint:</span>
-                                    <span class="small">
-                                        <asp:Literal ID="litWindUrl" runat="server" /></span>
-                                </td>
-                            </tr>
-                            
-
-                            <!-- Solar service -->
-                            <tr>
-                                <td><%: litProvider1.Text %></td>
-                                <td>SVC (WSDL)</td>
-                                <td class="small">
-                                    Displays annual-average solar energy data for a given ZIP code.<br />
-                                    <b>SolarIntensity</b><br />
-                                    Params: <code>lat - decimal, lon - decimal</code><br />
-                                    Return: <code>decimal</code>
-                                </td>
-                                <td class="row-actions">
-                                    <a class="btn" href="TryIt.aspx#solar">TryIt</a>
-                                    <span class="small muted">Endpoint:</span>
-                                    <span class="small">
-                                        <asp:Literal ID="litSolarUrl" runat="server" /></span>
-                                </td>
-                            </tr>
-                            --%>
 
                             <!-- DLL (hashing functions) -->
                             <tr>
                                 <td><%: litProvider1.Text %></td>
                                 <td>DLL</td>
-                                <td class="small">
-                                    DLL for hashing functions. Used in login for A6.<br />
+                                <td class="small">DLL for hashing functions. Used in login for A6.<br />
                                     <b>Sha256Hex</b> and <b>Sha256Base64</b><br />
                                     Params: <code>plain: string</code><br />
                                     Return: <code>string</code>
@@ -158,8 +127,7 @@
                             <tr>
                                 <td><%: litProvider2.Text %></td>
                                 <td>SVC (WSDL)</td>
-                                <td class="small">
-                                    Real-time stock information and guidance service.<br />
+                                <td class="small">Real-time stock information and guidance service.<br />
                                     <b>DownloadStockInfo</b><br />
                                     Params: <code>symbol - string</code><br />
                                     Return: <code>string</code>
@@ -176,8 +144,7 @@
                             <tr>
                                 <td><%: litProvider2.Text %></td>
                                 <td>Cookie</td>
-                                <td class="small">
-                                    Stores the last searched stock symbol so the user can return and see
+                                <td class="small">Stores the last searched stock symbol so the user can return and see
                                     their previous query prefilled.<br />
                                     Input: <code>symbol - string</code> from the stock textbox.<br />
                                     Return: (cookie stored on client side)
@@ -189,27 +156,11 @@
                                 </td>
                             </tr>
 
-                            <!-- Global.asax event handler(Diya) -->
-                            <tr>
-                                <td><%: litProvider2.Text %></td>
-                                <td>Global.asax</td>
-                                <td class="small">
-                                    Global.asax event handler that tracks the total number of visits.<br />
-                                    Input: none<br />
-                                    Return: <code>int</code>
-                                </td>
-                                <td class="row-actions">
-                                    <a class="btn" href="TryIt.aspx#global">TryIt</a>
-                                    <br />
-                                </td>
-                            </tr>
-
                             <!-- NewsService (Elani) -->
                             <tr>
                                 <td><%: litProvider3.Text %></td>
                                 <td>SVC (WSDL)</td>
-                                <td class="small">
-                                    News service that returns a collection of news article URLs for one or more topics.<br />
+                                <td class="small">News service that returns a collection of news article URLs for one or more topics.<br />
                                     <b>NewsFocus</b><br />
                                     Params: <code>topics - string[]</code><br />
                                     Return: <code>string[]</code>
@@ -222,16 +173,17 @@
                                 </td>
                             </tr>
 
-                            <!-- Additional components (Elani) -->
+                            <!-- Global.asax event handler(Elani) -->
                             <tr>
                                 <td><%: litProvider3.Text %></td>
-                                <td>Enter component type</td>
-                                <td class="small">
-                                    Enter Description/Operation/Params/Return
+                                <td>Global.asax</td>
+                                <td class="small">Global.asax event handler that tracks the total number of visits.<br />
+                                    Input: none<br />
+                                    Return: <code>int</code>
                                 </td>
                                 <td class="row-actions">
-                                    <a class="btn" href="TryIt.aspx#comp7">TryIt</a>
-                                    <span class="small muted">Enter endpoint</span>
+                                    <a class="btn" href="TryIt.aspx#global">TryIt</a>
+                                    <br />
                                 </td>
                             </tr>
 
@@ -251,12 +203,18 @@
                     <h3>Testing Tips:</h3>
                     <p style="padding-left: 2em;">
                         <span>• To test the <b>WSDL services</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into the respective service's input box and Invoke.</span>
-                        <br /><br />
-                        <span>• To test the <b>DLL(unique component)</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into the SecurityLib - hasing (local DLL) section's input box, and select the preferred encryption type via the buttons to invoke.</span>
-                        <br /><br />
-                        <span>• To test the <b>Cookies</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into any box, invoke that service, and then leave the page(Close or use the back button). When you return to the same page, your inputs will be prefilled.</span>
-                        <br /><br />
-                        <span>• For the <b>User Control (LoginPanel)</b>, there is no actual test as the full functionality will be fully implemented in Assignment 6. For now, the Login function will only return an error for the Captcha, blank Username/Password, or that the function is under construction. The user control is implemented via the LoginPanel.ascx files in the Project within the Controls folder (CSE445_Assignment5/Controls/) where it may be inspected.</span>
+                        <br />
+                        <br />
+                        <span>• To test the <b>DLL</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into the SecurityLib - hasing (local DLL) section's input box, and select the preferred encryption type via the buttons to invoke.</span>
+                        <br />
+                        <br />
+                        <span>• To test the <b>Cookies</b>, simply navigate to the TryIt page via the TryIt button, enter an input into any box, invoke that service, and then leave the page(Close or use the back button). When you return to the same page, your inputs will be prefilled.</span>
+                        <br />
+                        <br />
+                        <span>• To test the <b>User Control (LoginPanel)</b>, login via the login section on the Default.aspx page or by pressing the "Log In" button which will direct you to the Login.aspx page. The user control is implemented via the LoginPanel.ascx files in the Project within the Controls folder (CSE445_Assignment5/Controls/) where it may be inspected.</span>
+                        <br />
+                        <br />
+                        <span>• To test the <b>Global.asax</b>, navigate to the TryIt page via the TrIt button, or navigate to the Member page via the Member button. From there, you can interact with the User/Visitor counter that utilizes the Global.asax component.</span>
                     </p>
                 </div>
             </div>

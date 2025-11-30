@@ -79,10 +79,12 @@ namespace CSE445_Assignment6
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 var litMsg = LoginPanel.FindControl("litMsg") as Literal;
+
                 if (litMsg != null)
                 {
                     litMsg.Text = "<span style='color:#b00;'>Error: A valid Username and Password are required to login.</span>";
                 }
+
                 return;
             }
 
@@ -98,16 +100,17 @@ namespace CSE445_Assignment6
             {
                 // invalid
                 var litMsg = LoginPanel.FindControl("litMsg") as Literal;
+
                 if (litMsg != null)
                 {
                     litMsg.Text = "<span style='color:#b00;'>Error: Invalid username or password.</span>";
                 }
+
                 return;
             }
 
             // auth cookie
-            Session["IsStaff"] = isStaff;
-            FormsAuthentication.SetAuthCookie(username, e.RememberMe);
+            IssueAuthCookie(username, e.RememberMe, isStaff);
 
             // redirect based on role
             if (isStaff)
@@ -124,6 +127,37 @@ namespace CSE445_Assignment6
         protected void Register(object sender, EventArgs e)
         {
             Response.Redirect("~/Pages/Register.aspx");
+        }
+
+        // issue forms auth cookie including role info
+        private void IssueAuthCookie(string username, bool rememberMe, bool isStaff)
+        {
+            // keep to not break other stuff
+            Session["IsStaff"] = isStaff;
+
+            string roles = isStaff ? "Staff" : "Member";
+
+            // build auth ticket with roles
+            var ticket = new FormsAuthenticationTicket(
+                1,
+                username,
+                DateTime.Now,
+                DateTime.Now.AddMinutes(30),
+                rememberMe,
+                roles,
+                FormsAuthentication.FormsCookiePath
+            );
+
+            string encrypted = FormsAuthentication.Encrypt(ticket);
+            var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
+
+            // try
+            if (rememberMe)
+            {
+                authCookie.Expires = ticket.Expiration;
+            }
+
+            Response.Cookies.Add(authCookie);
         }
     }
 }

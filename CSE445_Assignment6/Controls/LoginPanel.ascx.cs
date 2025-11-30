@@ -28,8 +28,8 @@ namespace CSE445_Assignment6.Controls
                 var c = Request.Cookies[LoginCookie];
 
                 // If want CAPTCHA every time, just set captchaPanel.Visible = true.
-                captchaPanel.Visible = true;
-                // captchaPanel.Visible = (c == null);
+                //captchaPanel.Visible = true;
+                captchaPanel.Visible = (c == null);
 
                 // remember me functionality
                 var rememberCookie = Request.Cookies[RememberMeCookie];
