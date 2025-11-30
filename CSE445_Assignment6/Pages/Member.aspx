@@ -34,8 +34,11 @@
 
                     <!-- Card 1 - Weather -->
                     <div class="card">
+                        <h2>Weather</h2>
+                        <p>
                         <div class="row">
                             <span class="lbl">ZIP code:</span>
+                            <br />
                             <asp:TextBox runat="server" ID="txtZip" Width="120" />
                             <asp:Button runat="server" ID="btnWeather" Text="Invoke" OnClick="btnWeather_Click" />
                         </div>
@@ -50,7 +53,7 @@
 
                     <!-- Card 2 - StockService -->
                     <div class="card">
-                        <h3 style="margin-top: 0;">Stock Info &amp; Analysis</h3>
+                        <h2 style="margin-top: 0;">Stock Info &amp; Analysis</h2>
 
                         <p class="small">
                             Input a stock symbol (AAPL, MSFT, etc.) and we will output

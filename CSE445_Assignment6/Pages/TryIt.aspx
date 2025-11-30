@@ -29,6 +29,7 @@
                     <p>Signature: <code>string[] Weather5day(string zipcode)</code></p>
                     <div class="row">
                         <span class="lbl">ZIP code:</span>
+                        <br />
                         <asp:TextBox runat="server" ID="txtZip" Width="120" />
                         <asp:Button runat="server" ID="btnWeather" Text="Invoke" OnClick="btnWeather_Click" />
                     </div>
@@ -48,6 +49,7 @@
                     </p>
                     <div class="row">
                         <span class="lbl">Input:</span>
+                        <br />
                         <asp:TextBox ID="txtHashInput" runat="server" Width="420" />
                     </div>
                     <br />
