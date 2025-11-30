@@ -99,7 +99,7 @@
                                         <asp:Literal ID="litWxUrl" runat="server" /></span>
                                 </td>
                             </tr>
-
+                            <%-- Not using for Assignment 6
                             <!-- Wind service -->
                             <tr>
                                 <td><%: litProvider1.Text %></td>
@@ -117,6 +117,7 @@
                                         <asp:Literal ID="litWindUrl" runat="server" /></span>
                                 </td>
                             </tr>
+                            
 
                             <!-- Solar service -->
                             <tr>
@@ -135,6 +136,7 @@
                                         <asp:Literal ID="litSolarUrl" runat="server" /></span>
                                 </td>
                             </tr>
+                            --%>
 
                             <!-- DLL (hashing functions) -->
                             <tr>

@@ -18,8 +18,8 @@ namespace CSE445_Assignment6
             {
                 string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 lblWeatherUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/WeatherService/WeatherService.svc");
-                lblSolarUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/SolarService/SolarService.svc");
-                lblWindUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/WindService/WindService.svc");
+                //lblSolarUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/SolarService/SolarService.svc");
+                //lblWindUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/WindService/WindService.svc");
                 lblStockUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/StockService/StockService.svc");
                 lblNewsUrl.Text = HttpUtility.HtmlEncode(baseUrl + "/Pages/NewsService/NewsService.svc");
             }
@@ -32,7 +32,7 @@ namespace CSE445_Assignment6
                 {
                     txtZip.Text = c.Value;
                 }
-
+                /* Not used for Assignment 6
                 if (string.IsNullOrWhiteSpace(txtSolarZip.Text))
                 {
                     txtSolarZip.Text = c.Value;
@@ -42,6 +42,7 @@ namespace CSE445_Assignment6
                 {
                     txtWindZip.Text = c.Value;
                 }
+                */
             }
 
             // Prefill SecurityLib/Hashing input from cookie if present
@@ -91,7 +92,7 @@ namespace CSE445_Assignment6
                 litWeather.Text = "<div style='color:#b00;'>Error: " + Server.HtmlEncode(ex.Message) + "</div>";
             }
         }
-
+        /* Not used for Assignment 6
         // Solar service
         protected void btnSolar_Click(object sender, EventArgs e)
         {
@@ -164,8 +165,9 @@ namespace CSE445_Assignment6
                 litWind.Text = "<div style='color:#b00;'>Error: " + Server.HtmlEncode(ex.Message) + "</div>";
             }
         }
-        // Hashing TryIt
-        // Hex button
+        */
+                // Hashing TryIt
+                // Hex button
         protected void btnHashHex_Click(object sender, EventArgs e)
         {
             try

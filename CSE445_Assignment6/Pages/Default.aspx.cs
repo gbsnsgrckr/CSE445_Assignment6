@@ -33,8 +33,8 @@ namespace CSE445_Assignment6
 
                 // Weather/Wind/Solar service endpoints
                 litWxUrl.Text = HttpUtility.HtmlEncode(baseUrl + appPath + "WeatherService/WeatherService.svc");
-                litWindUrl.Text = HttpUtility.HtmlEncode(baseUrl + appPath + "WindService/WindService.svc");
-                litSolarUrl.Text = HttpUtility.HtmlEncode(baseUrl + appPath + "SolarService/SolarService.svc");
+                //litWindUrl.Text = HttpUtility.HtmlEncode(baseUrl + appPath + "WindService/WindService.svc");
+                //litSolarUrl.Text = HttpUtility.HtmlEncode(baseUrl + appPath + "SolarService/SolarService.svc");
 
                 // Stock service endpoint
                 litStockUrl.Text = HttpUtility.HtmlEncode(baseUrl + appPath + "StockService/StockService.svc");

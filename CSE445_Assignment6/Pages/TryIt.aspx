@@ -35,6 +35,7 @@
                 <small>Source: NOAA National Weather Service</small>
             </div>
 
+            <%-- Not used for Assignment 6
             <!-- Solar Service -->
             <div class="card">
                 <h2>Solar Intensity</h2>
@@ -83,6 +84,7 @@
                 </div>
                 <small>Units: m/s (10 m). Source: NASA POWER climatology.</small>
             </div>
+            --%>
 
             <!-- SecurityLib - hashing functions-->
             <div class="card">

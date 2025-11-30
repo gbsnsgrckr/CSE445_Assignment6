@@ -105,24 +105,6 @@ namespace CSE445_Assignment6
         protected global::System.Web.UI.WebControls.Literal litWxUrl;
 
         /// <summary>
-        /// litWindUrl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litWindUrl;
-
-        /// <summary>
-        /// litSolarUrl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSolarUrl;
-
-        /// <summary>
         /// litStockUrl control.
         /// </summary>
         /// <remarks>
