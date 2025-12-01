@@ -6,9 +6,9 @@ Elani Zarraga
 
 To test:
 
-Start from the solution within the root. This will open Visual Studio. Select Debug -> Start without debugging and the application will begin running in your browser.
+Start from the solution file within the root. This will open Visual Studio. Select Debug -> Start Without Debugging and the application will begin running in your browser.
 
-From there you will be given details as to how to view the application on Webstrar as well.
+If you would like to test through Webstrar, visit: http://webstrar73.fulton.asu.edu/page0 while connected to Cisco AnyConnect using sslvpn.asu.edu/2fa as instructed in the Webstrar tutorial for this assignment.
 
 Thank you!
 
