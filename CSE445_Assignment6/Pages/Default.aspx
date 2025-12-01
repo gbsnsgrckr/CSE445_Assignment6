@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CSE445_Assignment6.Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CSE445_Assignment6.Default" %>
 
 <%@ Register Src="~/Controls/LoginPanel.ascx" TagPrefix="uc" TagName="LoginPanel" %>
 
@@ -50,7 +50,7 @@
                             <dd>LoginPanel user control.</dd>
 
                             <dt>Cookies:</dt>
-                            <dd>"Remember me" functionality for login as well as retaining ZIP input on TryIt page.</dd>
+                            <dd>"Remember me" functionality for login as well as retaining ZIP and stock symbol input on TryIt page.</dd>
 
                             <dt>Global.asax:</dt>
                             <dd>Visitor count and also Forms authorization ticket</dd>
@@ -123,6 +123,26 @@
                                 </td>
                             </tr>
 
+                            <!-- Cookie (Remember me functions) -->
+                            <tr>
+                                <td><%: litProvider1.Text %></td>
+                                <td>Cookie</td>
+                                <td class="small">Cookie saved during login, when 'Remember Me' box is checked. After logout, enables username autofill. Visible from integrated GUI, can be tested by logging in with 'Remember Me' checkbox checked, hitting 'login' button, then 'logout' button.<br />
+                                    <b>Sha256Hex</b> and <b>Sha256Base64</b><br />
+                                    Input: checkbox to enable cookies <br />
+                                    Return: (cookie stored on client side)
+                                </td>
+                                <td class="row-actions">
+                                    <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
                             <!-- StockService(Diya) -->
                             <tr>
                                 <td><%: litProvider2.Text %></td>
@@ -151,6 +171,24 @@
                                 </td>
                                 <td class="row-actions">
                                     <a class="btn" href="TryIt.aspx#cookie">TryIt</a>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
+                            <!-- Global.asax event handler(Diya) -->
+                            <tr>
+                                <td><%: litProvider2.Text %></td>
+                                <td>Global.asax</td>
+                                <td class="small">Global.asax event handler builds the principal with roles from the authentication cookie. Available from integrated GUI, can be tested by trying to access staff page - proves user role is tracked. <br />
+                                    Input: none<br />
+                                    Return: <code>string</code>
+                                </td>
+                                <td class="row-actions">
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
                                     <br />
                                     <br />
                                 </td>
@@ -187,6 +225,22 @@
                                 </td>
                             </tr>
 
+                            <!-- Cookie component(Elani) -->
+                            <tr>
+                                <td><%: litProvider3.Text %></td>
+                                <td>Cookie</td>
+                                <td class="small">Stores the last inputted ZIP code for weather service so the user can return and see
+                                    their previous query prefilled.<br />
+                                    Input: <code>symbol - string</code> from the weather textbox.<br />
+                                    Return: (cookie stored on client side)
+                                </td>
+                                <td class="row-actions">
+                                    <a class="btn" href="TryIt.aspx#cookie">TryIt</a>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -202,6 +256,9 @@
                     </p>
                     <h3>Testing Tips:</h3>
                     <p style="padding-left: 2em;">
+                        <span>• To test adding a staff member, manually add a new username to the XML file Staff.xml. Create a login (user/pw) if not already there, and they should now be able to access the staff page.</span>
+                        <br />
+                        <br />
                         <span>• To test the <b>WSDL services</b>, simply navigate to the TryIt page via the TryIt buttons, enter an input into the respective service's input box and Invoke.</span>
                         <br />
                         <br />
@@ -215,6 +272,10 @@
                         <br />
                         <br />
                         <span>• To test the <b>Global.asax</b>, navigate to the TryIt page via the TrIt button, or navigate to the Member page via the Member button. From there, you can interact with the User/Visitor counter that utilizes the Global.asax component.</span>
+                        <br />
+                        <br />
+                        <span>• <b>Test cases: </b> For WDSL services, test weather service with zip codes: '85044'(valid)/'11111' (fail-invalid zip code), test stock service with 'AAPL'(valid)/'aq'(fail - invalid symbol), test newsfocus service with 'cooking'. For components, test hashing by inputting 'qwhdowin', test stock symbol cookie with 'AAPL'(valid)/'aq'(fail - invalid symbol), and test global user tracker by pressing the button once, opening a new incognito window with this page link, and hitting the button again on the incognito browser, where you can see it increased.. Only way to 'fail' anything else is by putting nothing and error handling is provided for all components/applications</span>
+
                     </p>
                 </div>
             </div>
