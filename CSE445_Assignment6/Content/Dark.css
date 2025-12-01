@@ -1,4 +1,4 @@
-﻿html, body {
+html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
@@ -80,7 +80,7 @@ table.dir {
 
     table.dir th, table.dir td {
         padding: 10px;
-        border-bottom: 1px solid #eee;
+        border: 1px solid #eee;
         vertical-align: top;
     }
 
@@ -93,7 +93,14 @@ table.dir {
     }
 
 .table.dir td.row-actions {
+    display: block !important;
     text-align: center;
+    white-space: nowrap;
+}
+
+table.dir td:empty::after {
+    content: "\00a0"; 
+    visibility: hidden;
 }
 
 .small {
@@ -288,5 +295,4 @@ asp\:textbox {
         .news-list a:hover {
             text-decoration: underline;
         }
-
 
