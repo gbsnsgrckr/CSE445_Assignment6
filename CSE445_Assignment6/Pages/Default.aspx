@@ -134,7 +134,23 @@
                                 </td>
                                 <td class="row-actions">
                                     <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
+                             <!-- Default.aspx  -->
+                            <tr>
+                                <td><%: litProvider1.Text %></td>
+                                <td>Aspx page</td>
+                                <td class="small">Default.aspx page with login info and app descriptions.<br />
+                                </td>
+                                <td class="row-actions">
+                                    <br />
+                                    <br />
                                     <br />
                                     <br />
                                     <br />
@@ -194,6 +210,23 @@
                                 </td>
                             </tr>
 
+                            <!-- Member.aspx  -->
+                            <tr>
+                                <td><%: litProvider2.Text %></td>
+                                <td>Aspx page</td>
+                                <td class="small">Member.aspx page with member info and app descriptions.<br />
+                                </td>
+                                <td class="row-actions">
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
                             <!-- NewsService (Elani) -->
                             <tr>
                                 <td><%: litProvider3.Text %></td>
@@ -236,6 +269,23 @@
                                 </td>
                                 <td class="row-actions">
                                     <a class="btn" href="TryIt.aspx#cookie">TryIt</a>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+
+                            <!-- Staff.aspx  -->
+                            <tr>
+                                <td><%: litProvider3.Text %></td>
+                                <td>Aspx page</td>
+                                <td class="small">Staff.aspx page with staff/member info and app descriptions.<br />
+                                </td>
+                                <td class="row-actions">
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
                                     <br />
                                     <br />
                                 </td>
