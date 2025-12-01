@@ -18,7 +18,7 @@ namespace CSE445_Assignment6
 
             // clear cookies
             ClearCookie("LoginOK");
-            ClearCookie("LastUser");
+            //ClearCookie("LastUser");
             ClearCookie("LastZip");
             ClearCookie("LastHash");
             ClearCookie("LastStock");
@@ -39,12 +39,14 @@ namespace CSE445_Assignment6
                 Response.Cookies.Add(loginCookie);
             }
 
+            /* Keep last user for Remember Me functionality
             if (Request.Cookies["LastUser"] != null)
             {
                 var lastUserCookie = new HttpCookie("LastUser");
                 lastUserCookie.Expires = DateTime.UtcNow.AddDays(-1);
                 Response.Cookies.Add(lastUserCookie);
             }
+            */
 
             if (Request.Cookies["LastZip"] != null)
             {
